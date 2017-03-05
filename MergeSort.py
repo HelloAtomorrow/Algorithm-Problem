@@ -42,7 +42,3 @@ if __name__ == "__main__":
     sortList = [5, 4, 7, 3, 5, 2, 1]
     MergeSort(sortList, 0, 6)
     print("Result: ", sortList)
-    
-    
-
-
