@@ -2,8 +2,13 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Jul 12 20:33:16 2017
-@author: 
-    
+
+从数组中找出第order大的元素：
+思路是借用快速排序的方法，不断找到分割点元素，比较该元素与order的大小，
+如果小于order，则在[start，order-1]之间寻找第order大的数。
+如果大于order，则在[order+1, finish]之间寻找第（order-分割点位置）大的元素。
+
+这种算法的期望运行时间是O(n)
 """
 import random
 
