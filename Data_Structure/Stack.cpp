@@ -56,35 +56,35 @@ CMyStack<T>::~CMyStack()
 template <class T>
 void CMyStack<T>::push(T value)
 {
-	SStackNode<T> *node = new SStackNode<T>;
-	node->value = value;
-	node->next = top;
-	top = node;
+    SStackNode<T> *node = new SStackNode<T>;
+    node->value = value;
+    node->next = top;
+    top = node;
 }
 
 
 template <class T>
 T CMyStack<T>::pop()
 {
-	SStackNode<T> *node = top;
-	T value = node->value;
-	top = top->next;
-	delete node;
-	return value;
+    SStackNode<T> *node = top;
+    T value = node->value;
+    top = top->next;
+    delete node;
+    return value;
 }
 
 
 template <class T>
 bool CMyStack<T>::isEmpty()
 {
-	if (top == NULL)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+    if (top == NULL)
+    {
+    	return true;
+    }
+    else
+    {
+    	return false;
+    }
 }
 
 
