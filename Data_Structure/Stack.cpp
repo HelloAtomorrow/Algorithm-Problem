@@ -6,16 +6,16 @@
 #include <iostream>
 using namespace std;
 
-template <class T>
+template <typename elemType>
 struct SStackNode
 /*栈的节点结构*/
 {
-    T value;
+    elemType value;
     SStackNode *next;
 };
 
 
-template <class T>
+template <typename elemType>
 class CMyStack
 {
 /*栈的类的实现，包括压栈，弹栈，判断栈是否为空的操作
@@ -24,26 +24,26 @@ public:
     CMyStack();
     ~CMyStack();
     bool isEmpty();
-    void push(T value);
-    T pop();
-    T stackTop();
+    void push(elemType value);
+    elemType pop();
+    elemType stackTop();
 
 private:
-    SStackNode<T> *top;   
+    SStackNode<elemType> *top;   
 };
 
 
-template <class T>
-CMyStack<T>::CMyStack()
+template <typename elemType>
+CMyStack<elemType>::CMyStack()
 {
     top = NULL;
 }
 
 
-template <class T>
-CMyStack<T>::~CMyStack()
+template <typename elemType>
+CMyStack<elemType>::~CMyStack()
 {
-    SStackNode<T> *node = NULL;
+    SStackNode<elemType> *node = NULL;
     while (top != NULL)
     {
         node = top;
@@ -53,29 +53,29 @@ CMyStack<T>::~CMyStack()
 }
 
 
-template <class T>
-void CMyStack<T>::push(T value)
+template <typename elemType>
+void CMyStack<elemType>::push(elemType value)
 {
-    SStackNode<T> *node = new SStackNode<T>;
+    SStackNode<elemType> *node = new SStackNode<elemType>;
     node->value = value;
     node->next = top;
     top = node;
 }
 
 
-template <class T>
-T CMyStack<T>::pop()
+template <typename elemType>
+elemType CMyStack<elemType>::pop()
 {
-    SStackNode<T> *node = top;
-    T value = node->value;
+    SStackNode<elemType> *node = top;
+    elemType value = node->value;
     top = top->next;
     delete node;
     return value;
 }
 
 
-template <class T>
-bool CMyStack<T>::isEmpty()
+template <typename elemType>
+bool CMyStack<elemType>::isEmpty()
 {
     if (top == NULL)
     {
